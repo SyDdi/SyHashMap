@@ -10,7 +10,8 @@ public class SYHashMap<K,V> implements SyMap<K,V > {
 
     //定义默认数组大小
     private static int defaultLength = 16;
-    //扩容标准 所使用数组数量/数组长度 > 0.75
+    //扩容标准 所使用数组数量/数组长度 > 0.75  为什么是0.75？ 因为大了  不容易发生扩容 增加冲突概率 导致get 或者 put 时间增多 ，因为需要便利大量的链表空间
+    //小了容易频繁扩容那么散列表的数据将过于稀疏，对空间造成严重浪费
     private static double defaultAddSizeFactor = 0.75;
     //使用数组位置的总数
     private int useSize;
